@@ -1,0 +1,26 @@
+﻿@Multi.Tenancy_HostAddress = https://localhost:7239
+
+GET {{Multi.Tenancy_HostAddress}}/api/Employees
+tenant: aminenafkha
+
+###
+
+POST {{Multi.Tenancy_HostAddress}}/api/Employees
+tenant: aminenafkha
+Content-Type: application/json
+
+{
+  "name" : "Amine Nafkha",
+  "description" : "DotNet Developer"
+}
+
+###
+
+POST {{Multi.Tenancy_HostAddress}}/api/Employees
+Content-Type: application/json
+
+{
+  //EmployeeDto
+}
+
+###
