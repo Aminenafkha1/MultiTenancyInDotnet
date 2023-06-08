@@ -28,22 +28,31 @@ The project includes the following API endpoints for managing employees:
 ### Get All Employees
 
 - Endpoint: `GET /api/Employees`
-- Description: Retrieve all employees across all tenants.
-- Response: Returns a list of employees.
+- Description: Retrieve all employees for the specified tenant.
+- Headers:
+  - `tenant` (string) - The name of the tenant.
+- Response: Returns a list of employees for the specified tenant.
 
 ### Get Employee by ID
 
 - Endpoint: `GET /api/Employees/{id}`
-- Description: Retrieve an employee by their ID.
-- Parameters: `id` (integer) - The ID of the employee.
-- Response: Returns the employee with the specified ID if found, or a 404 status if not found.
+- Description: Retrieve an employee by their ID for the specified tenant.
+- Parameters:
+  - `id` (integer) - The ID of the employee.
+- Headers:
+  - `tenant` (string) - The name of the tenant.
+- Response: Returns the employee with the specified ID for the given tenant if found, or a 404 status if not found.
 
 ### Create Employee
 
 - Endpoint: `POST /api/Employees`
-- Description: Create a new employee.
+- Description: Create a new employee for the specified tenant.
+- Headers:
+  - `tenant` (string) - The name of the tenant.
+  - `Content-Type` (string) - Set to `application/json`.
 - Request Body: Expects an `EmployeeDto` object with employee details (e.g., name, description).
-- Response: Returns the created employee with a generated ID.
+- Response: Returns the created employee with a generated ID for the specified tenant.
+
 
 ## Usage
 
@@ -55,6 +64,6 @@ To use this project, follow these steps:
 
 ## Author
 
-👨‍💻 Amine Nafkha
-- GitHub: [github.com/yourusername](https://github.com/yourusername)
-- LinkedIn: [linkedin.com/in/yourname](https://www.linkedin.com/in/yourname)
+👨‍💻 Amine Nafkha - DotNet Developer!
+- GitHub:  https://github.com/Aminenafkha1
+- LinkedIn: https://www.linkedin.com/in/amine-nafkha/
